@@ -4,7 +4,7 @@ defaults: &docker_image
     - image: cimg/node:19.5.0
   
 
-version 2.1
+version: 2.1
 jobs:
   save_hello_world_output:
     docker:
