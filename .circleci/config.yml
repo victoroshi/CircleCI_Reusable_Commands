@@ -1,6 +1,7 @@
 # CircleCI reusable commands demo
-defaults: docker_image:
-  - image: cimg/node:19.5.0
+defaults: &docker_image
+  docker:
+    - image: cimg/node:19.5.0
   
 
 version 2.1
