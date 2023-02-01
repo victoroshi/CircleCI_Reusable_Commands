@@ -2,8 +2,11 @@ version: 2.1
 
 commands:
   print_pipeline_id:
+    parameters:
+      id:
+      type: string
     steps:
-      - run: echo ${CIRCLE_WORKFLOW_ID}
+      - run: echo << parameters.id} >>
 
 jobs:
   my_job:
@@ -11,6 +14,7 @@ jobs:
       - image: cimg/node:19.5.0
     steps:
       - print_pipeline_id
+        id: << pipeline.id >>
 
 workflows:
   pipeline_workflow:
