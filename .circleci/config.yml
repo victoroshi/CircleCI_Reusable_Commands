@@ -8,11 +8,11 @@ commands:
 jobs:
   my_job:
     docker:
-      - image: circleci/node:13.8.0
+      - image: cimg/node:19.5.0
     steps:
       - print_pipeline_id
 
 workflows:
-  my_workflow:
+  pipeline_workflow:
     jobs:
       - my_job
