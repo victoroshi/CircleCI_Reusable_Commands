@@ -11,16 +11,6 @@ jobs:
       - image: cimg/node:19.5.0
     steps:
       - print_pipeline_id
-  
-  failed_cont:   
-       
-        command: |
-            echo "I will exit fail status"
-            exit 1
-        
-        command: |
-            echo "I am result of above failed job"
-        when: on_fail
 
 workflows:
   pipeline_workflow:
