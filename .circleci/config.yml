@@ -14,5 +14,5 @@ jobs:
 
 workflows:
   pipeline_workflow:
-    jobs
+    jobs:
       - my_job
