@@ -16,4 +16,3 @@ workflows:
   pipeline_workflow:
     jobs
       - my_job
-      - failed_cont
