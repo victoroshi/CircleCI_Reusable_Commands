@@ -15,16 +15,16 @@ jobs:
   failed_cont:
     docker:
       - image: cimg/node:19.5.0
-      - run:
-          name: Run commands
-          command: |
-              echo "I will exit fail status"
-              exit 1
-      - run:
-          name: Run on fail status
-          command: |
-              echo "I am result of above failed job"
-          when: on_fail
+    steps:
+        name: Run commands
+        command: |
+            echo "I will exit fail status"
+            exit 1
+    steps:
+        name: Run on fail status
+        command: |
+            echo "I am result of above failed job"
+        when: on_fail
 
 workflows:
   pipeline_workflow:
