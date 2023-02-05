@@ -13,8 +13,7 @@ jobs:
       - print_pipeline_id
   
   failed_cont:
-    docker:
-      - image: cimg/node:19.5.0
+   
     steps:
         name: Run commands
         command: |
