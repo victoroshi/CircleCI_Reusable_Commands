@@ -12,14 +12,13 @@ jobs:
     steps:
       - print_pipeline_id
   
-  failed_cont:
-   
-    steps:
+  failed_cont:   
+
         name: Run commands
         command: |
             echo "I will exit fail status"
             exit 1
-    steps:
+
         name: Run on fail status
         command: |
             echo "I am result of above failed job"
