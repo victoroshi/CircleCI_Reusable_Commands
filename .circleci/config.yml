@@ -11,8 +11,23 @@ jobs:
       - image: cimg/node:19.5.0
     steps:
       - print_pipeline_id
+  
+  failed_cont:
+    docker:
+      - image: cimg/node:19.5.0
+      - run:
+          name: Run commands
+          command: |
+              echo "I will exit fail status"
+              exit 1
+      - run:
+          name: Run on fail status
+          command: |
+              echo "I am result of above failed job"
+          when: on_fail
 
 workflows:
   pipeline_workflow:
-    jobs:
+    jobs
       - my_job
+      - failed_cont
